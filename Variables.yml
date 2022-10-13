@@ -1,0 +1,10 @@
+
+- hosts: appserver
+  vars: 
+    name: Azure
+  tasks: 
+    - name: Replace string
+      replace:
+         path: /home/cloud-user/configuration.txt
+         regexp: 'AWS'
+         replace: '{{ name }}'
